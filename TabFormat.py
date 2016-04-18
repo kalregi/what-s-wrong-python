@@ -1,4 +1,4 @@
-from CoprusFormat import *
+from CorpusFormat import *
 from TabProcessor import *
 
 

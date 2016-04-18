@@ -1,4 +1,5 @@
 from NLPInstance import *
+from TabFormat import *
 
 
 # Loads CoNLL 2000 chunk data.
@@ -70,7 +71,8 @@ class CoNLL2002(object):
             instance.addSpan(index, index, row[1], "ner (BIO)")
             index += 1
 
-        # TODO: TabFormat.extractSpan00(rows, 1, "ner", instance)
+        tabformat = TabFormat(object)
+        tabformat.extractSpan00(rows = rows, column=1, type="ner", instance=instance)
 
         return instance
 
@@ -113,8 +115,8 @@ class CoNLL2003(object):
             instance.addSpan(index, index, row[3], "ner (BIO)")
             index += 1
 
-        # TODO: TabFormat.extractSpan03(rows, 2, "chunk", instance)
-        # TODO: TabFormat.extractSpan03(rows, 3, "ner", instance)
+        TabFormat.extractSpan03(rows, 2, "chunk", instance)
+        TabFormat.extractSpan03(rows, 3, "ner", instance)
 
         return instance
 
